@@ -28,3 +28,40 @@ else
 fi
 
 echo "Done. MySQL is now listening on 0.0.0.0"
+
+MYSQL_USER="student"
+
+echo "Change MySQL password for user student: $MYSQL_USER"
+echo
+
+# Prompt for current password (hidden)
+read -s -p "Enter CURRENT MySQL password (it should be student): " CURRENT_PASS
+echo
+
+# Prompt for new password (hidden)
+read -s -p "Enter NEW MySQL password: " NEW_PASS
+echo
+
+# Confirm new password
+read -s -p "Confirm NEW MySQL password: " CONFIRM_PASS
+echo
+
+if [ "$NEW_PASS" != "$CONFIRM_PASS" ]; then
+  echo "❌ Passwords do not match. Exiting."
+  exit 1
+fi
+
+echo "Updating password..."
+
+mysql -u "$MYSQL_USER" -p"$CURRENT_PASS" <<EOF
+ALTER USER '$MYSQL_USER'@'%' IDENTIFIED BY '$NEW_PASS';
+FLUSH PRIVILEGES;
+EOF
+
+if [ $? -eq 0 ]; then
+  echo "✅ Password updated successfully."
+else
+  echo "❌ Failed to update password. Check credentials or permissions."
+  exit 1
+fi
+
