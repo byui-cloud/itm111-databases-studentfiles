@@ -49,17 +49,23 @@
 
 -- Query 17 SWITCH to the magazine database
 
--- Query 18 show table aliases, AS is an optional keyword with column aliases
+-- Query 18 Show subscribers in the magazines that have a subscription
+-- show table aliases, AS is an optional keyword with column aliases
 -- and with table aliases
 
 
--- Query 19 reverse the two table's order and show how it's the same with RIGHT
+-- Query 19 ALL magazines (even if they aren't connected to a subscription),
+--  their price, start date or subscription
+
+-- Query 19a Show all magazines and their price, start date or subscription (use a right join)
+-- reverse the two table's order and show how it's the same with RIGHT
 -- There is one magazine with no subscribers. How would you show all magazines
 -- and only the related data of the subscription table? (On their own)
 -- list out magazineName, magazinePrice, and subscriptionStartDate (use table aliases)
 
     
--- Query 20 Now add to the query above the 3rd table of subscribers so you can see
+-- Query 20 All magazines even if no subscriptions, subscriptions, subscribers lastname
+-- Now add to the query above the 3rd table of subscribers so you can see
 -- their last name (demonstrates using 3 tables in a OUTER JOIN) (On their Own)
 -- It should still show the one magazine with  date and name as null
 
