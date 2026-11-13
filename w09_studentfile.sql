@@ -15,7 +15,7 @@
  -- adding a table alias for artwork called 'aw'
  -- using a. meaning the table artist and aw. for the table artwork
 
--- Maybe look at https://art.byuiwebdev.com/
+-- Maybe look at http://54.157.167.34/
 
 -- Query 6 What if I only want Leonardo diVinci's?
  -- OR fname = 'Leonardo'
